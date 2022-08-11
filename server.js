@@ -6,8 +6,8 @@ app.use(express.static("public"));
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: '*'
-  }
+    origin: "*",
+  },
 });
 
 app.get("/", (req, res) => {
@@ -20,4 +20,4 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3030);
+server.listen(process.env.PORT || 3030);
